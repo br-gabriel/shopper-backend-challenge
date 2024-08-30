@@ -1,5 +1,5 @@
 import express, { Router } from "express"; 
-const { uploadMeasurement, confirmMeasurement, getListOfMeasurements } = require("../controllers/measurementController");
+import { uploadMeasurement, confirmMeasurement, getListOfMeasurements } from "../controllers/measurementController";
 
 const router: Router = express.Router();
 
