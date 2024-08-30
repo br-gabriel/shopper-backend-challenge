@@ -1,0 +1,17 @@
+import mongoose from "mongoose";
+import { v4 as uuidv4 } from "uuid";
+
+const measurementSchema = new mongoose.Schema({
+  _id: { type: String, default: uuidv4 },
+  measure_uuid: { type: String, default: uuidv4, unique: true },
+  measure_datetime: { type: Date, required: true },
+  measure_type: { type: String, enum: ["WATER", "GAS"], required: true },
+  measure_value: { type: Number, required: true },
+  has_confirmed: { type: Boolean, default: false, require: true },
+  customer_code: { type: String, required: true },
+  image_url: { type: String, required: true },
+});
+
+const Measurement = mongoose.model("Measurement", measurementSchema);
+
+export default Measurement;
