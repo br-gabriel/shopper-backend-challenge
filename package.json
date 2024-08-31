@@ -1,10 +1,11 @@
 {
   "name": "shopper-backend-challenge",
   "version": "1.0.0",
-  "main": "index.js",
+  "type": "module",
+  "main": "src/server.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/server.ts"
+    "dev": "npx tsx src/server.ts"
   },
   "keywords": [],
   "author": "",
@@ -15,8 +16,7 @@
     "@types/mongoose": "^5.11.97",
     "@types/node": "^22.5.1",
     "@types/uuid": "^10.0.0",
-    "nodemon": "^3.1.4",
-    "ts-node": "^10.9.2",
+    "tsx": "^4.19.0",
     "typescript": "^5.5.4"
   },
   "dependencies": {
