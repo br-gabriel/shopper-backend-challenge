@@ -11,7 +11,7 @@ mongoose
   .then(() => console.log("MongoDB conectado"))
   .catch((error) => console.log(error));
 
-app.use(express.json());
+app.use(express.json({ limit: '10mb'}));
 app.use("/", measurementRoutes);
 
 export default app;
