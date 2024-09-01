@@ -145,7 +145,7 @@ const getListOfMeasurements = async(req: Request, res: Response) => {
                     error_description: "Tipo de medição não permitida"
                 })
             }
-            filter = { customer_code, normalizedMeasureType };
+            filter.measure_type = normalizedMeasureType;
         }
 
         const measurementsList = await Measurement.find(filter);
