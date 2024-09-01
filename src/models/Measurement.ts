@@ -3,7 +3,6 @@ import { v4 as uuidv4 } from "uuid";
 
 interface IMeasurement extends Document {
   _id: string;
-  measure_uuid: string;
   measure_datetime: Date;
   measure_type: 'WATER' | 'GAS';
   measure_value: number;
@@ -14,7 +13,6 @@ interface IMeasurement extends Document {
 
 const measurementSchema: Schema<IMeasurement> = new mongoose.Schema({
   _id: { type: String, default: uuidv4 },
-  measure_uuid: { type: String, default: uuidv4, unique: true },
   measure_datetime: { type: Date, required: true },
   measure_type: { type: String, enum: ["WATER", "GAS"], required: true },
   measure_value: { type: Number, required: true },
