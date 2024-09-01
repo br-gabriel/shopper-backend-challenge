@@ -83,17 +83,17 @@ const uploadMeasurement = async(req: Request, res: Response) => {
 };
 
 const confirmMeasurement = async(req: Request, res: Response) => {
-  const { measure_uuid, confirmed_value } = req.body;
+  const { _id, confirmed_value } = req.body;
   
   try {
-    if (!measure_uuid || isNaN(confirmed_value)) {
+    if (!_id || isNaN(confirmed_value)) {
         return res.status(400).json({
             error_code: "INVALID_DATA", 
             error_description: "Os dados fornecidos no corpo da requisição são inválidos"
         });
     }
 
-    const measurementExists = await Measurement.findById({ measure_uuid });
+    const measurementExists = await Measurement.findById({ _id });
     
     if (!measurementExists) {
         return res.status(404).json({
